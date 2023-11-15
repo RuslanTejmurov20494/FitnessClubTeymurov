@@ -1,0 +1,75 @@
+﻿<Window x:Class="FitnessClub19KT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub19KT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1200" Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None" >
+    <Border Background="#FF1B2838"
+            CornerRadius="25">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+        
+            <Grid x:Name="ToolBar" Background="Transparent" MouseDown="ToolBar_MouseDown">
+                <TextBlock x:Name="TblLogin"
+                           Style="{DynamicResource TblStyle}"
+                           Text="Пользователь"/>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Image x:Name="ButtonMinimize" Source="/Assets/Minimize.png"
+                           Height="25" Width="25" Margin="0 0 5 0"
+                           MouseDown="ButtonMinimize_MouseDown">
+
+                    </Image>
+                    
+                    <Image x:Name="ButtonExit" Source="/Assets/Exit.png"
+                           Height="25" Width="25"
+                           MouseDown="ButtonExit_MouseDown" Margin="0 0 20 0">
+                    </Image>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 0 5">
+                <Button x:Name="BtnServiceList"
+                        Style="{DynamicResource BtnStyle}"
+                        Height="60"
+                        Width="200"
+                        Content="СПИСОК УСЛУГ"
+                        FontFamily="Bahnschrift SemiBold SemiCondensed"
+                        Margin="0 0 25 0" Click="BtnServiceList_Click"/>
+                <Button x:Name="BtnCartList"
+                        Style="{DynamicResource BtnStyle}"
+                        Height="60"
+                        Width="200"
+                        Content="КОРЗИНА"
+                        FontFamily="Bahnschrift SemiBold SemiCondensed"
+                        Margin="0 0 25 0" Click="BtnCartList_Click"/>
+                <Button x:Name="BtnAddEdit"
+                        Style="{DynamicResource BtnStyle}"
+                        Height="60"
+                        Width="200"
+                        Content="ДОБАВИТЬ"
+                        FontFamily="Bahnschrift SemiBold SemiCondensed"
+                        Margin="0 0 0 0" Click="BtnAddEdit_Click"/>
+            </StackPanel>
+
+            <!--ListServiceStart-->
+            <Frame x:Name="FrListService" 
+                   NavigationUIVisibility="Hidden"
+                   Grid.Row="2"/>
+            <!--ListServiceEnd-->
+        </Grid>
+    </Border>
+
+</Window>
